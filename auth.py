@@ -18,7 +18,6 @@ def authenticate_user(credentials: HTTPBasicCredentials = Depends(security)):
 
     cur.execute("SELECT username, password FROM admin_users WHERE username = %s", (credentials.username,))
     user = cur.fetchone()
-    print(user)
 
     cur.close()
     conn.close()
